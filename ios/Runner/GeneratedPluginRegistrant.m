@@ -10,12 +10,6 @@
 @import geolocator;
 #endif
 
-#if __has_include(<google_api_availability/GoogleApiAvailabilityPlugin.h>)
-#import <google_api_availability/GoogleApiAvailabilityPlugin.h>
-#else
-@import google_api_availability;
-#endif
-
 #if __has_include(<location_permissions/LocationPermissionsPlugin.h>)
 #import <location_permissions/LocationPermissionsPlugin.h>
 #else
@@ -38,7 +32,6 @@
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
   [GeolocatorPlugin registerWithRegistrar:[registry registrarForPlugin:@"GeolocatorPlugin"]];
-  [GoogleApiAvailabilityPlugin registerWithRegistrar:[registry registrarForPlugin:@"GoogleApiAvailabilityPlugin"]];
   [LocationPermissionsPlugin registerWithRegistrar:[registry registrarForPlugin:@"LocationPermissionsPlugin"]];
   [PermissionHandlerPlugin registerWithRegistrar:[registry registrarForPlugin:@"PermissionHandlerPlugin"]];
   [FLTSharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTSharedPreferencesPlugin"]];
